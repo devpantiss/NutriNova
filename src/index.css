@@ -1,0 +1,335 @@
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Premium NGO Warm Light Theme */
+  --bg-primary: #F8FAF5; /* Soft Off-White */
+  --bg-secondary: #EEF7EE; /* Light Green Tint */
+  --bg-card: #FFFFFF; /* Pure White */
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-glass-heavy: rgba(255, 255, 255, 0.95);
+  
+  --border-light: rgba(46, 125, 50, 0.08);
+  --border-medium: rgba(46, 125, 50, 0.15);
+  --border-emerald: rgba(46, 125, 50, 0.2);
+  --border-cyan: rgba(102, 187, 106, 0.2);
+
+  --text-primary: #1F2937; /* Dark Charcoal */
+  --text-secondary: #4B5563; /* Soft Gray */
+  --text-muted: #6B7280;
+  --text-light: #1F2937; /* Re-mapped to dark charcoal for default headings */
+  --text-bright: #FFFFFF; /* White text for dark banners / primary buttons */
+
+  --color-emerald: #2E7D32; /* Natural Health Green (Primary) */
+  --color-cyan: #66BB6A; /* Growth Green (Secondary) */
+  --color-indigo: #FFA726; /* Warm Hope Orange (Accent) */
+  --color-violet: #8b5cf6;
+  --color-rose: #f43f5e;
+  --color-amber: #FFA726;
+
+  --gradient-primary: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-cyan) 100%);
+  --gradient-tech: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-indigo) 100%);
+  --gradient-dark: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  --gradient-glow-emerald: radial-gradient(circle at 50% 50%, rgba(46, 125, 50, 0.08) 0%, transparent 70%);
+  --gradient-glow-cyan: radial-gradient(circle at 50% 50%, rgba(102, 187, 106, 0.08) 0%, transparent 70%);
+
+  --shadow-sm: 0 2px 8px rgba(31, 41, 55, 0.04);
+  --shadow-md: 0 8px 24px rgba(31, 41, 55, 0.08);
+  --shadow-lg: 0 16px 40px rgba(31, 41, 55, 0.12);
+  --shadow-glow: 0 0 20px rgba(46, 125, 50, 0.12);
+  --shadow-glow-cyan: 0 0 20px rgba(102, 187, 106, 0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Re-map fallback light theme support just to match the main config */
+[data-theme="light"] {
+  --bg-primary: #F8FAF5;
+  --bg-secondary: #EEF7EE;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-glass-heavy: rgba(255, 255, 255, 0.95);
+  
+  --border-light: rgba(46, 125, 50, 0.08);
+  --border-medium: rgba(46, 125, 50, 0.15);
+  --border-emerald: rgba(46, 125, 50, 0.2);
+  --border-cyan: rgba(102, 187, 106, 0.2);
+
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-light: #1F2937;
+}
+
+
+/* Basic Resets & Page Wrapping */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--gradient-dark);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Typography Custom Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-primary);
+}
+
+/* Premium Layout & Container Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* Button & Link UI */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-indigo); /* Warm Hope Orange */
+  color: var(--text-bright) !important;
+  box-shadow: 0 4px 12px rgba(255, 167, 38, 0.2);
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background: #FB8C00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 167, 38, 0.4);
+  opacity: 1;
+}
+
+.btn-secondary {
+  background: rgba(46, 125, 50, 0.04);
+  border: 1px solid rgba(46, 125, 50, 0.15);
+  color: var(--color-emerald) !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(46, 125, 50, 0.08);
+  border-color: rgba(46, 125, 50, 0.28);
+  transform: translateY(-2px);
+}
+
+.btn-outline-emerald {
+  background: transparent;
+  border: 1px solid var(--color-emerald);
+  color: var(--color-emerald) !important;
+}
+.btn-outline-emerald:hover {
+  background: rgba(46, 125, 50, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(46, 125, 50, 0.12);
+}
+
+.btn-outline-cyan {
+  background: transparent;
+  border: 1px solid var(--color-cyan);
+  color: var(--color-cyan) !important;
+}
+.btn-outline-cyan:hover {
+  background: rgba(102, 187, 106, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(102, 187, 106, 0.12);
+}
+
+/* Glassmorphism Cards & Panels */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-tech {
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Elements */
+.glow-blur-emerald {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--gradient-glow-emerald);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-blur-cyan {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--gradient-glow-cyan);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Infinite Scrolling Partner Track */
+.marquee-container {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  gap: 60px;
+  align-items: center;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom Grid Utility */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Timeline Custom Styles */
+.timeline-container {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-emerald) 0%, var(--color-cyan) 100%);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 24px;
+  }
+}
+
+/* Page Navigation Spacing */
+main {
+  flex: 1;
+  padding-top: 80px; /* Navbar height compensation */
+}
