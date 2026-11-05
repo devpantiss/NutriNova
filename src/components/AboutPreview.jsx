@@ -115,6 +115,7 @@ export default function AboutPreview() {
               <img
                 src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80"
                 alt="Empowering rural education"
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: '420px',

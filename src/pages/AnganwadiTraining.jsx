@@ -52,7 +52,7 @@ export default function AnganwadiTraining() {
             display: 'block'
           }}
         >
-          <source src="/aganwadi.mp4" type="video/mp4" />
+          <source src="/videos/anganwadi-training-hero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         
@@ -333,6 +333,8 @@ export default function AnganwadiTraining() {
             }
             .feature-hover-card {
               transition: all 0.3s ease;
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
             }
             .feature-hover-card:hover {
               transform: translateY(-2px);
@@ -362,6 +364,7 @@ export default function AnganwadiTraining() {
               <img
                 src="/aganwadi.jpeg"
                 alt="Anganwadi Workers and Sahayikas Training Session"
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: '100%',

@@ -43,10 +43,10 @@ export default function Gallery() {
       id: 4,
       type: 'video',
       category: 'videos',
-      url: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
-      videoUrl: "https://player.vimeo.com/external/403737295.sd.mp4?s=d00067341ea2e0dbb88ff3f825227d8df930c1be&profile_id=165&oauth2_token_id=57447761",
-      title: "Brain Development Tech Demo",
-      desc: "Clip demonstrating local AR card responses."
+      url: "/videos/posters/home-hero.jpg",
+      videoUrl: "/videos/home-hero.mp4",
+      title: "A Day at the Anganwadi",
+      desc: "Children arriving for early learning activities at an Anganwadi centre."
     },
     {
       id: 5,
@@ -60,10 +60,10 @@ export default function Gallery() {
       id: 6,
       type: 'video',
       category: 'videos',
-      url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
-      videoUrl: "https://player.vimeo.com/external/403737295.sd.mp4?s=d00067341ea2e0dbb88ff3f825227d8df930c1be&profile_id=165&oauth2_token_id=57447761",
-      title: "Community Partner Seminar",
-      desc: "Highlights from our annual partner tech integration showcase."
+      url: "/videos/posters/nutrition-basket-hero.jpg",
+      videoUrl: "/videos/nutrition-basket-hero.mp4",
+      title: "Packing Nutrition Baskets",
+      desc: "Volunteers packing high-protein nutrition baskets for TB patients."
     }
   ];
 
@@ -182,6 +182,7 @@ export default function Gallery() {
                     fontSize: '10px',
                     fontWeight: 700,
                     padding: '3px 8px',
+                    lineHeight: 1.4,
                     borderRadius: 'var(--radius-full)',
                     textTransform: 'uppercase',
                     zIndex: 2
@@ -282,8 +283,10 @@ export default function Gallery() {
               {activeMedia.type === 'video' ? (
                 <video
                   src={activeMedia.videoUrl}
+                  poster={activeMedia.url}
                   autoPlay
                   controls
+                  playsInline
                   style={{ width: '100%', maxHeight: '65vh', objectFit: 'contain', backgroundColor: '#000', display: 'block' }}
                 />
               ) : (

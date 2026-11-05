@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Target, Heart, Eye, Award, Sparkles, Sliders, Globe, Activity, BookOpen, Users, GraduationCap } from 'lucide-react';
+import { Target, Heart, Eye, Award, Sparkles, Sliders, Activity, BookOpen, Users, GraduationCap } from 'lucide-react';
 
 export default function About() {
   const [baskets, setBaskets] = useState(30);
@@ -411,8 +411,8 @@ export default function About() {
                       background-color: var(--bg-secondary);
                       border: 2px solid var(--color-emerald);
                       display: flex;
-                      alignItems: center;
-                      justifyContent: center;
+                      align-items: center;
+                      justify-content: center;
                       font-weight: 700;
                       color: var(--color-emerald);
                       z-index: 2;

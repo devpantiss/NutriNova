@@ -113,6 +113,7 @@ export default function GalleryPreview() {
               <img
                 src={img.url}
                 alt={img.caption}
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: '100%',

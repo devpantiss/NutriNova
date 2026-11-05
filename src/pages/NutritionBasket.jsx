@@ -1,4 +1,4 @@
-import { Apple, CheckCircle2, ShieldAlert, Award, TrendingUp, Users, Heart, Shield, Activity } from 'lucide-react';
+import { Apple, CheckCircle2, ShieldAlert, Award, TrendingUp, Users, Heart, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -45,7 +45,7 @@ export default function NutritionBasket() {
             zIndex: 1
           }}
         >
-          <source src="/WhatsApp Video 2026-06-24 at 01.16.44.mp4" type="video/mp4" />
+          <source src="/videos/nutrition-basket-hero.mp4" type="video/mp4" />
         </video>
 
         {/* Dark Transparent Overlay */}
@@ -184,7 +184,8 @@ export default function NutritionBasket() {
             <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '20px' }}>
               <img 
                 src="/WhatsApp Image 2026-06-24 at 01.17.01.jpeg" 
-                alt="Rajesh Kisku" 
+                alt="Rajesh Kisku"
+                loading="lazy"
                 style={{ 
                   width: '60px', 
                   height: '60px', 
@@ -246,6 +247,7 @@ export default function NutritionBasket() {
               <img
                 src="/WhatsApp Image 2026-06-24 at 01.17.01.jpeg"
                 alt="Nutrition Basket Initiative Showcase"
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: 'auto',

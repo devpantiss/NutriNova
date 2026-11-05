@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
@@ -33,7 +33,7 @@ export default function HeroSection() {
           zIndex: 1
         }}
       >
-        <source src="/WhatsApp Video 2026-06-23 at 23.24.55 (1).mp4" type="video/mp4" />
+        <source src="/videos/home-hero.mp4" type="video/mp4" />
       </video>
 
       {/* Cyber Glow Overlays */}
